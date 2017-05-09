@@ -1,0 +1,917 @@
+body{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
+    margin:0 auto;
+    /*font-family: Maven Pro;*/
+
+}
+nav {
+    height: 120px;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background-color: #FFFFFF;
+    border-bottom: solid 2px;
+    width: 100%;
+}
+
+.logo{
+    width:100px;
+    height: 100px;
+    float: left;
+    margin: 10px 80px;
+}
+.menu{
+    float:left;
+    margin:0 80px;
+    padding: 10px 0 0 0;
+}
+.classActive:active{
+    background-color: #FFFFFF;
+}
+.menuList{
+    float:left;
+    list-style-type: none;
+    margin-top:25px;
+    padding:15px 30px;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    border-radius: 50px;
+    text-align: center;
+    transition: .3s;
+}
+.menuLink{
+    vertical-align:center;
+    height:40px;
+    text-decoration: none;
+    color:#000000;
+}
+.menuList:hover{
+    float:left;
+    list-style-type: none;
+    margin-top:25px;
+    padding:15px 30px;
+    background-color: #F7B926;
+    font-size: 16px;
+    border-radius: 50px;
+    color: #FFFFFF;
+}
+.menuPhone{
+    float:right;
+    font-size:30px;
+    margin-top: 20px;
+    margin-right:30px;
+    clear: right;
+
+}
+.menuPhoneLink{
+    text-decoration: none;
+    color: #000000;
+}
+.logAndSign{
+    /*margin-top: 40px;*/
+    width: 200px;
+    height: 20px;
+    float: right;
+    padding-left: 20px;
+}
+.logAndSign li{
+    list-style-type: none;
+    /*text-decoration: none;*/
+    float: left;
+    padding-right: 10px;
+    margin-right: 10px;
+}
+.regA, .logA{
+    text-decoration: none;
+    color: #000000;
+}
+#borderLi{
+    border-right: 2px solid #000000;
+}
+p{
+    margin:0;
+}
+.borderNav{
+    height: 15px;
+    background-repeat: repeat-x;
+    margin-top: 100px;
+    margin-bottom:0;
+
+}
+
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshowContainer {
+    width: 100%;
+    max-height: 720px;
+    position: relative;
+    padding-top: 120px;
+    margin-left:0;
+    margin-right: 0;
+}
+
+.mySlides {
+    display: none;
+}
+.mySlides img{
+    height: 600px;
+}
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev{
+    left: 0;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 50px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    height:400px;
+}
+.orderButton {
+    border-radius: 50px;
+    height: 45px;
+    font-size: 30px;
+    background-color: transparent;
+    border-color: #FFFFFF;
+    color: #FFFFFF;
+    padding:0 30px;
+}
+.orderButton:hover {
+    border-radius: 50px;
+    height: 45px;
+    font-size: 30px;
+    background-color: transparent;
+    border-color: #FFFFFF;
+    color: #000000;
+    padding:0 30px;
+}
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor:pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+.active{
+    background-color: #F7B926;
+    color:#FFFFFF;
+}
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.slide2text{
+    height:400px;
+    float: left;
+    width: 50%;
+    text-align: center;
+    font-size: 50px;
+    padding-top: 200px;
+    overflow: auto;
+}
+.slide2image{
+    width: 45%;
+    float:left;
+    margin: 0;
+    overflow:auto;
+}
+.slideImage{
+    height: 600px;
+    background-image: url(../img/slider3.jpg);
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+.downloadAppButton{
+    border-radius: 50px;
+    height: 45px;
+    font-size: 30px;
+    background-color: transparent;
+    padding: 0 30px;
+}
+.downloadAppButton:hover{
+    color: #FFFFFF;
+}
+.choosePar, .lostPropertyText{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.whiteEmblem{
+    width: 80px;
+    height:5px;
+}
+.chooseTaxi{
+    font-size: 20px;
+    height: 50px;
+    background-color: #FFFFFF;
+    border-radius: 50px;
+    width: 100px;
+    text-align: center;
+    /*cursor: default;*/
+    border: solid #F7B926;
+    color: #F7B926;
+    cursor: pointer;
+}
+.chooseTaxi:hover{
+    font-size: 20px;
+    height: 50px;
+    background-color: #F7B926;
+    border-radius: 50px;
+    width: 100px;
+    color: #FFFFFF;
+    border: solid #F7B926;
+}
+.chooseTaxi:active{
+    background-color: #F7B926;
+    color: #FFFFFF;
+}
+.taxiCost{
+    width: 100%;
+    margin-left:0;
+    margin-right: 0;
+}
+.chooseCar,.driverText, .advertText ,.bookingFormText, .testimonialsText{
+    text-align: center;
+}
+.carImage{
+    text-align: center;
+    background-image: url(../img/town.jpg);
+}
+.carImage.img{
+    width: 60%;
+    height: 400px;
+}
+.costAndClass{
+    float:left;
+    color:#FFFFFF;
+    text-align:center;
+    border-radius: 50px;
+    background-color: #F7B926;
+    margin:0 23px;
+    padding: 15px 100px;
+}
+.costAndClassText{
+    width:180px;
+    float:left;
+    color:#FFFFFF;
+    text-align:center;
+    border-radius: 50px;
+    background-color: #F7B926;
+    /*margin:0px 10px;*/
+    padding: 15px 20px;
+
+}
+.costAndClassSpan{
+    font-size: 24px;
+}
+.booking{
+    background-image: url(../img/city.jpg);
+    width: 100%;
+    height: 720px;
+    margin:50px 0 0 0;
+    /*padding-top:120px;*/
+}
+.bookingForm{
+    width:50%;
+    float: left;
+    background-color: #000000;
+    padding-top:180px;
+    height:720px;
+}
+.bookingFormText p,.advertText p, .testimonialsText p, .driverText p{
+    font-size: 24px;
+    color: #ffffff;
+}
+.bookingFormText img{
+    width: 100px;
+    height: 10px;
+}
+.formTable{
+    font-size: 20px;
+    color: #F7B926;
+    margin-left: 80px;
+}
+.tableWords{
+    width: 200px;
+}
+.tableInput{
+    border-radius:5px;
+    width: 345px;
+    height: 30px;
+    background-color: #1a1a1a;
+    border: solid #1a1a1a;
+    margin:10px 0;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+.bookNowButton{
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: #F7B926;
+    font-size: 16px;
+    color: #FFFFFF;
+    border: solid #F7B926;
+}
+.bookingPicture{
+    text-align: center;
+    float: left;
+    width: 40%;
+    padding-top: 140px;
+    padding-left: 50px;
+}
+
+/*noinspection CssInvalidPropertyValue*/
+.parallax {
+    /* The image used */
+    width: 100%;
+    /*background-repeat: repeat-y;*/
+    /* Set a specific height */
+    height: 600px;
+
+    /* Create the parallax scrolling effect */
+    background: url(../img/testimonials.jpg) fixed center;
+    margin-left:0;
+    margin-right: 0;
+}
+
+.testimonialsText p{
+    padding-top: 80px;
+}
+.testTaxiEmblem, .driverTaxiElement, .advertisingTaxiEmblem{
+    width: 80px;
+    height: 5px;
+
+}
+.testBlock1{
+    background-color: #E0E0E0;
+    width: 600px;
+    border-radius: 50px;
+    height: 200px;
+    margin-top: 100px;
+}
+.testimonialDiv1, .testimonialDiv2{
+    height: 300px;
+}
+.testBlock1.left, .testBlock2.left{
+    float: left;
+    margin-left: 25px;
+}
+
+.testBlock1.right, .testBlock2.right{
+    float: right;
+    margin-right: 25px;
+}
+.testChooseButton{
+    text-align: center;
+    margin-top: 30px;
+}
+.testButton{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+    border: solid #FFFFFF;
+    font-size: 16px;
+}
+.testButton:hover{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: #000000;
+    border: solid #000000;
+    font-size: 16px;
+    color: #FFFFFF;
+}
+.testComment{
+    padding: 30px;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+.testImage{
+    width: 115px;
+    height: 115px;
+    border-radius: 50px;
+    float: left;
+    margin-left: 40px;
+    margin-top:-20px;
+}
+.quoteTaxiImage{
+    /*z-index: 1;*/
+    position: absolute;
+    margin-left: 360px;
+    margin-top: 40px;
+    border-radius: 20px;
+}
+.testName{
+    font-size:1.3em;
+    padding-top: 20px;
+    padding-left: 170px;
+}
+.testimonialsText p{
+    padding-top: 80px;
+}
+
+/*lost properties*/
+
+.lost{
+    margin: 0 100px;
+    height: 720px;
+    padding-top: 120px;
+}
+.lostPropText1{
+    text-align:center;
+    font-size:24px;
+    color: #a2a2a2;
+    margin-top: 10px;
+}
+.lostPropText2{
+    color:#a2a2a2;
+    font-size:15px;
+    text-align: center;
+    margin-top: 10px;
+}
+.lostStep1, .lostStep2, .lostStep3{
+    float: left;
+    width: 300px;
+    height:300px;
+    margin: 10px 20px;
+    border-radius: 180px;
+    display: block;
+}
+
+
+.contactButton{
+    border: solid #F7B926;
+    color:#FFFFFF;
+    font-size:20px;
+    margin-top:30px;
+    width: 200px;
+    height: 50px;
+    background-color: #F7B926;
+    border-radius: 50px;
+    margin-bottom:0;
+    cursor: pointer;
+}
+.stepText {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+.arrow{
+    width: 10px;
+    height:10px;
+    float:left;
+    padding-top: 140px;
+    font-size: 30px;
+    font-weight: bold;
+    margin:0 5px;
+}
+.contactButton{
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+.contactButton:hover{
+    background-color: #FFFFFF;
+    color: #F7B926;
+}
+
+/*vacation - drivers*/
+.driver{
+    height:720px;
+    padding-top: 120px;
+}
+.driver .parallax{
+    background-image: url(../img/city.jpg);
+}
+.driverText p{
+    padding-top: 50px;
+}
+.driverType{
+    /*padding-bottom: 80px;*/
+    height: 400px;
+    margin: 10px 100px 0;
+}
+.driverType1{
+    width: 280px;
+    float: left;
+    color: #F7B926;
+    text-align: center;
+    margin: 0 40px;
+}
+.driverType1 p{
+    color: #FFFFFF;
+}
+.driverTypeImage{
+    width: 260px;
+    height:260px;
+    border: 10px solid #FFFFFF;
+    border-radius: 10px;
+
+}
+
+.vacancyContactButton{
+    text-align: center;
+    margin-top:0;
+
+}
+.vacancyContactButton .contactButton{
+    text-align: center;
+    width: 400px;
+    border: solid #F7B926;
+    color:#FFFFFF;
+    font-size:20px;
+    height: 50px;
+    background-color: #F7B926;
+    border-radius: 50px;
+    margin-bottom:30px;
+    margin-top: 0;
+    cursor: pointer;
+}
+.advertising{
+    width: 100%;
+    height: 500px;
+    background-color: #F7B926;
+    padding-top: 50px;
+}
+.adText{
+    width: 50%;
+    float: left;
+    padding-left: 80px;
+}
+.adHeader1{
+    margin-bottom:10px;
+    font-weight: 300;
+}
+.adImage{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.adImage img{
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;
+    border: 30px solid #FDE3A7;
+}
+.adSteps{
+    text-decoration: none;
+    padding-left: 0;
+    margin-top: 0;
+}
+.adStepList{
+    list-style-type: none;
+    color: #FFFFFF;
+    margin-top: 3px;
+}
+#adHeader2{
+    margin-bottom: 0;
+    font-weight: 300;
+}
+.adPar{
+    color: #FFFFFF;
+}
+.adContact{
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: solid #000000;
+}
+.adContact:hover{
+    background-color: #F7B926;
+    color: #000000;
+}
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: #000000;
+    margin: 0;
+}
+.aboutUs, .quickLink, .contacts, .followUs{
+    width: 25%;
+    float: left;
+    color: #FFFFFF;
+    padding-right: 0;
+    /*margin-right: 30px;*/
+}
+.followUs{
+    float: right;
+}
+.quickLink{
+    padding-left: 50px;
+}
+.aboutUsHeader, .quickLinkHeader,
+.contactUsHeader, .followUsHeader{
+    padding-left: 50px;
+    margin-top:30px;
+    margin-bottom:0;
+}
+.aboutUsText, .contactUsText{
+    padding-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 16px;
+}
+.TaxiEmblem{
+    width: 100px;
+    height: 5px;
+    margin-left: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.quickLinkList{
+    list-style-type: none;
+    padding-left: 50px;
+    margin-top:30px;
+    text-decoration: none;
+}
+.quickLinkListItem{
+    margin:10px 0;
+}
+.qLinkA{
+    text-decoration: none;
+    color: #FFFFFF;
+    /*font-size: 20px;*/
+}
+.facebook, .twitter, .googlePlus{
+
+    cursor: pointer;
+
+    text-decoration: none;
+}
+.facebook i, .twitter i, .googlePlus i{
+    color: #FFFFFF;
+    font-size: 20px;
+    padding:10px;
+}
+/*contact form*/
+.inside {
+    padding:22px 20px 0 29px;
+    margin-top: 120px;
+    background-image: url(../img/city.jpg);
+    height: 500px;
+}
+.contText{
+    width: 50%;
+    float:left;
+    margin-right: 0;
+    color: #F7B926;
+}
+.address{
+    color: #FFFFFF;
+}
+.extra-wrap{
+    width: 70%;
+}
+.extra-wrap h4{
+    color:#F7B926;
+}
+.contForm{
+    width: 45%;
+    padding-left: 5%;
+    float:left;
+    color: #F7B926;
+}
+.contForm h2{
+    padding-left: 12px;
+}
+#contacts-form {
+    clear:right;
+    width:100%;
+    overflow:hidden;
+}
+#contacts-form fieldset {
+    border:none;
+    float:left;
+}
+#contacts-form .field {
+    clear:both;
+    height:30px;
+}
+#contacts-form .field.extra {
+    height:268px;
+}
+#contacts-form label {
+    float:left;
+    width:123px;
+    font-weight:bold;
+    color: #F7B926;
+}
+
+#contacts-form input {
+    width:277px;
+    padding:2px 0 2px 3px;
+    border:1px solid #d1d1d1;
+    color:#70635b;
+    border-radius: 10px;
+}
+#contacts-form textarea {
+    width:400px;
+    height:252px;
+    padding:2px 0 2px 3px;
+    border:1px solid #d1d1d1;
+    color:#70635b;
+    overflow:auto;
+    border-radius: 10px;
+}
+.alignright{
+    padding-top: 10px;
+}
+.alignright a{
+    text-decoration: none;
+    color:#FFFFFF;
+
+}
+.aboutus{
+    background-image: url(../img/city.jpg);
+    height: 600px;
+    width: 100%;
+    margin-top: 120px;
+    vertical-align: middle;
+}
+.aboutus h1{
+    text-align: center;
+    color: #F7B926;
+    font-size: 3em;
+    padding-top: 170px;
+
+}
+.aboutus p{
+    text-align: center;
+    font-size: 2em;
+    color: #FFFFFF;
+}
+
+
+.loginBody{
+    background-image: url(../img/city.jpg);
+    margin-top: 120px;
+    height: 600px;
+    padding-top: 150px;
+}
+.logIn{
+    width: 500px;
+    text-align: center;
+    margin:0 auto;
+    /*margin-top: 120px;*/
+    padding-bottom: 200px;
+
+}
+.logIn h1, .registration h1{
+    color: #F7B926;
+    text-align: center;
+}
+.loginEmail, .loginPassword, .loginSubmit{
+    width: 400px;
+    height: 40px;
+    border-radius: 5px;
+    font-size:16px;
+    margin-top:5px;
+    /*color:#F7B926;*/
+}
+.loginSubmit{
+    background-color: #F7B926;
+    margin-top: 20px;
+    color:#FFFFFF;
+}
+.loginCheckbox{
+    margin-left: 45px;
+    margin-top: 40px;
+    float: left;
+    color: #F7B926;
+}
+.forgotPass{
+    margin-top: 40px;
+    float: right;
+    padding-left: 30px;
+    margin-right:50px;
+    color: #F7B926;
+}
+
+
+.registration{
+    background-image: url(../img/city.jpg);
+    width: 100%;
+    height: 720px;
+    /*margin-top: 120px;*/
+    margin-top:120px;
+    padding: 50px;
+
+
+}
+.registration table{
+    /*width: 50%;*/
+    height: 500px;
+    margin:0 auto;
+}
+
+.tableRow{
+    text-align: center;
+}
+.tableColumn{
+    padding: 0;
+}
+.tableCol{
+    width:400px;
+    height:30px;
+    border-radius: 5px;
+}
+
+.tableRow .tabCol{
+    height:30px;
+    /*margin-right:15px;*/
+    /*margin-left:4px;*/
+    border-radius: 5px;
+    /*text-align: center;*/
+}
+.regBirthDate, .agreement{
+    float: left;
+}
+.regBirthYear, .regSubmit{
+    float: right;
+}
+.regAgreeLink{
+    text-decoration: none;
+    font-size: 16px;
+    color:#F7B926;
+    float:left;
+    padding-top: 10px;
+    padding-right:20px;
+}
+.regSubmit{
+    margin-top: 5px;
+    width: 100px;
+    background-color: #F7B926;
+    border: solid #F7B926;
+    border-radius: 50px!important;
+    height: 50px;
+    color: #000000;
+    font-size: 15px;
+}
