@@ -1,3 +1,53 @@
+<?php
+session_start();
+if (isset($_SESSION['userSession'])!="") {
+    header("Location: taxi.php");
+}
+require_once 'dbconnect.php';
+
+if(isset($_POST['btn-signup'])) {
+    
+    $uname = strip_tags($_POST['username']);
+    $email = strip_tags($_POST['email']);
+    $upass = strip_tags($_POST['password']);
+    
+    $uname = $DBcon->real_escape_string($uname);
+    $email = $DBcon->real_escape_string($email);
+    $upass = $DBcon->real_escape_string($upass);
+    
+    $hashed_password = password_hash($upass, PASSWORD_DEFAULT); 
+    
+    $check_email = $DBcon->query("SELECT email FROM tbl_users WHERE email='$email'");
+    $count=$check_email->num_rows;
+    
+    if ($count==0) {
+        
+        $query = "INSERT INTO tbl_users(username,email,password) VALUES('$uname','$email','$hashed_password')";
+
+        if ($DBcon->query($query)) {
+            $msg = "<div class='alert alert-success'>
+                        <span class='glyphicon glyphicon-info-sign'></span> &nbsp; successfully registered !
+                    </div>";
+        }else {
+            $msg = "<div class='alert alert-danger'>
+                        <span class='glyphicon glyphicon-info-sign'></span> &nbsp; error while registering !
+                    </div>";
+        }
+        
+    } else {
+        
+        
+        $msg = "<div class='alert alert-danger'>
+                    <span class='glyphicon glyphicon-info-sign'></span> &nbsp; sorry email already taken !
+                </div>";
+            
+    }
+    
+    $DBcon->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +63,7 @@
 <nav>
     <a href="taxi.html"><img src="img/logoImage.jpg" class="logo"></a>
     <ul class="menu">
-        <li class="menuList active" ><a class="menuLink " href="taxi.html">Home</a></li>
+        <li class="menuList active" ><a class="menuLink " href="taxi.php">Home</a></li>
         <li class="menuList"><a class="menuLink" href="aboutUs.html">About Us</a></li>
         <li class="menuList"><a class="menuLink" href="booking.html">Booking</a></li>
         <li class="menuList"><a class="menuLink" href="vacancy.html">Vacancies</a></li>
@@ -22,38 +72,38 @@
     <div>
         <p class="menuPhone" id="phoneNumber"> &#128222 <a class="menuPhoneLink" href="tel:+99871-150-77-66"> 150 77 66 </a></p>
         <ul class="logAndSign">
-            <li id="borderLi"><a class="regA" href="registration.html">Sign up</a></li>
-            <li><a class="logA" href="logIn.html">Log in</a></li>
+            <li id="borderLi"><a class="regA" href="registration.php">Sign up</a></li>
+            <li><a class="logA" href="logIn.php">Log in</a></li>
         </ul>
     </div>
 </nav>
 <div class="registration">
-
     <h1>Registration</h1>
-    <form name="frmRegistration" method="post" action="registration.php">
-        <table>
+
+    <form method="post">
+    <table>
+         <?php
+        if (isset($msg)) {
+            echo $msg;
+        }
+        ?>
         <tr class="tableRow">
-            <td class="tableColumn"><input class="tableCol regName" name = "name" type="text" placeholder="Manzura"></td>
+            <td class="tableColumn"><input class="tableCol regName" type="text" placeholder="Name" name="username"></td>
+        </tr>
+       
+        <tr class="tableRow">
+            <td class="tableColumn"><input class="tableCol regEmail" type="email" placeholder="Example@example.com" name="email"></td>
         </tr>
         <tr class="tableRow">
-            <td class="tableColumn"><input class="tableCol regSurname" name = "surname" type="text" placeholder="Jakhongirova"></td>
+            <td class="tableColumn"><input class="tableCol regPass" type="password" placeholder="Password" name ="password"></td>
         </tr>
         <tr class="tableRow">
-            <td class="tableColumn"><input class="tableCol regUsername" name = "username" type="text" placeholder="manzurka"></td>
-        </tr>
-        <tr class="tableRow">
-            <td class="tableColumn"><input class="tableCol regEmail" name = "email" type="email" placeholder="Example@example.com"></td>
-        </tr>
-        <tr class="tableRow">
-            <td class="tableColumn"><input class="tableCol regPass" name = "password" type="password" placeholder="Baju@96"></td>
-        </tr>
-        <tr class="tableRow">
-            <td class="tableColumn"><input class="tableCol regConPass" name = "confirmPassword"type="password" placeholder="Confirm password"></td>
+            <td class="tableColumn"><input class="tableCol regConPass" type="password" placeholder="Confirm password"></td>
         </tr>
         <tr class="tableRow">
             <td class="tableColumn">
-                <input class="tabCol regBirthDate" name="birthDate" type="number" placeholder="17">
-                <select class="tabCol regBirthMonth" name="birthMonth">
+                <input class="tabCol regBirthDate" type="number" placeholder="Day Of Birth">
+                <select class="tabCol regBirthMonth">
                     <option selected>Month</option>
                     <option>January</option>
                     <option>February</option>
@@ -68,14 +118,14 @@
                     <option>November</option>
                     <option>December</option>
                 </select>
-                <input class="tabCol regBirthYear" name="year" type="number" placeholder="1996">
+                <input class="tabCol regBirthYear" type="number" placeholder="Year">
             </td>
 
 
         </tr>
         <tr class="tableRow">
             <td class="tableColumn">
-                <select class="tableCol regGender" name="gender">
+                <select class="tableCol regGender">
                     <option selected>Gender</option>
                     <option>Male</option>
                     <option>Female</option>
@@ -84,21 +134,22 @@
         </tr>
         <tr class="tableRow">
             <td class="tableColumn">
-                <input class="tableCol regPhone" name="phone" type="tel" placeholder="(+99899) 850-56-38">
+                <input class="tableCol regPhone" type="tel" placeholder="Phone number">
             </td>
         </tr>
         <tr class="tableRow">
             <td class="tableColumn">
-                <input class="tableCol regCountry" name="country" type="text" placeholder="Uzbekistan">
+                <input class="tableCol regCountry" type="text" placeholder="Country">
             </td>
         </tr>
         <tr class="tableRow">
             <td class="tableColumnol">
                 <input class="tabCol agreement" type="checkbox"><a class="regAgreeLink" href="#Agree">Agree</a>
-                <input class="tabCol regSubmit" type="submit" value="Sign Up">
+                <button class="tabCol regSubmit" type="submit" name="btn-signup"> SIGN UP</button>
             </td>
         </tr>
     </table>
+
     </form>
 </div>
 <div class="footer">
